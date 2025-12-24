@@ -1,0 +1,93 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" version="29.2.9">
+  <diagram name="AWS DevOps CI CD Architecture" id="0">
+    <mxGraphModel dx="185200" dy="106893" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="e1" edge="1" parent="1" source="dev" style="endArrow=block;" target="git" />
+        <mxCell id="e2" edge="1" parent="1" source="git" style="endArrow=block;" target="jenkins" />
+        <mxCell id="e3" edge="1" parent="1" source="jenkins" style="endArrow=block;" target="hub" />
+        <mxCell id="e4" edge="1" parent="1" source="hub" style="endArrow=block;" target="ansible" />
+        <mxCell id="e5" edge="1" parent="1" source="ansible" style="endArrow=block;" target="eks" />
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-1" parent="1" style="shape=ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Developer" vertex="1">
+          <mxGeometry height="60" width="120" x="-122055" y="-69570" as="geometry" />
+        </mxCell>
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="GitHub Repository" vertex="1">
+          <mxGeometry height="60" width="170" x="-121895" y="-69570" as="geometry" />
+        </mxCell>
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Jenkins Server&#xa;EC2 VM" vertex="1">
+          <mxGeometry height="80" width="200" x="-121675" y="-69580" as="geometry" />
+        </mxCell>
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Maven Build" vertex="1">
+          <mxGeometry height="60" width="160" x="-121655" y="-69470" as="geometry" />
+        </mxCell>
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Docker Image Build" vertex="1">
+          <mxGeometry height="60" width="160" x="-121655" y="-69380" as="geometry" />
+        </mxCell>
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Docker Hub" vertex="1">
+          <mxGeometry height="60" width="160" x="-121425" y="-69380" as="geometry" />
+        </mxCell>
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Ansible Control Node" vertex="1">
+          <mxGeometry height="70" width="220" x="-121225" y="-69380" as="geometry" />
+        </mxCell>
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f5f5f5;strokeColor=#666666;" value="AWS VPC" vertex="1">
+          <mxGeometry height="500" width="700" x="-120975" y="-69630" as="geometry" />
+        </mxCell>
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-9" parent="CzHkPFjoHXc3EC_8rf3d-8" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#fff2cc;strokeColor=#d6b656;" value="Amazon EKS Cluster" vertex="1">
+          <mxGeometry height="420" width="620" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-10" parent="CzHkPFjoHXc3EC_8rf3d-9" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Worker Node" vertex="1">
+          <mxGeometry height="300" width="540" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-11" parent="CzHkPFjoHXc3EC_8rf3d-10" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Pod&#xa;Tomcat + App" vertex="1">
+          <mxGeometry height="80" width="160" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-12" parent="CzHkPFjoHXc3EC_8rf3d-10" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Pod&#xa;Tomcat + App" vertex="1">
+          <mxGeometry height="80" width="160" x="220" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-13" parent="CzHkPFjoHXc3EC_8rf3d-10" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Pod&#xa;Tomcat + App" vertex="1">
+          <mxGeometry height="80" width="160" x="400" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-27" parent="1" style="shape=ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Developer" vertex="1">
+          <mxGeometry height="60" width="120" x="-172780" y="-98320" as="geometry" />
+        </mxCell>
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-28" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="GitHub Repository" vertex="1">
+          <mxGeometry height="60" width="170" x="-172620" y="-98320" as="geometry" />
+        </mxCell>
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-29" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Jenkins Server&#xa;EC2 VM" vertex="1">
+          <mxGeometry height="80" width="200" x="-172400" y="-98330" as="geometry" />
+        </mxCell>
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-30" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Maven Build" vertex="1">
+          <mxGeometry height="60" width="160" x="-172380" y="-98220" as="geometry" />
+        </mxCell>
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-31" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Docker Image Build" vertex="1">
+          <mxGeometry height="60" width="160" x="-172380" y="-98130" as="geometry" />
+        </mxCell>
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-32" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Docker Hub" vertex="1">
+          <mxGeometry height="60" width="160" x="-172150" y="-98130" as="geometry" />
+        </mxCell>
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-33" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="Ansible Control Node" vertex="1">
+          <mxGeometry height="70" width="220" x="-171950" y="-98130" as="geometry" />
+        </mxCell>
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-34" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#f5f5f5;strokeColor=#666666;" value="AWS VPC" vertex="1">
+          <mxGeometry height="500" width="700" x="-171700" y="-98380" as="geometry" />
+        </mxCell>
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-35" parent="CzHkPFjoHXc3EC_8rf3d-34" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#fff2cc;strokeColor=#d6b656;" value="Amazon EKS Cluster" vertex="1">
+          <mxGeometry height="420" width="620" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-36" parent="CzHkPFjoHXc3EC_8rf3d-35" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Worker Node" vertex="1">
+          <mxGeometry height="300" width="540" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-37" parent="CzHkPFjoHXc3EC_8rf3d-36" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Pod&#xa;Tomcat + App" vertex="1">
+          <mxGeometry height="80" width="160" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-38" parent="CzHkPFjoHXc3EC_8rf3d-36" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Pod&#xa;Tomcat + App" vertex="1">
+          <mxGeometry height="80" width="160" x="220" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CzHkPFjoHXc3EC_8rf3d-39" parent="CzHkPFjoHXc3EC_8rf3d-36" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Pod&#xa;Tomcat + App" vertex="1">
+          <mxGeometry height="80" width="160" x="400" y="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
